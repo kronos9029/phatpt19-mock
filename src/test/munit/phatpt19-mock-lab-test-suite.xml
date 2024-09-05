@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="phatpt19-mock-lab-test-suite.xml" />
+	<munit:test name="phatpt19-mock-lab-test-suite-post:\employee:application\json:phatpt19-mock-lab-configTest" doc:id="db5d77a0-28ad-4030-95e9-8b098526b0fd" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\employee:application\json:phatpt19-mock-lab-config" doc:id="265ffc89-bcfe-414a-845b-0ce7af732bc3" name="post:\employee:application\json:phatpt19-mock-lab-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert doc:name="Assert expression" doc:id="e9e87fca-e05b-4637-b2f2-9809aaeda727" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

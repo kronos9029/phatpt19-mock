@@ -1,0 +1,129 @@
+#%RAML 1.0 Library
+usage:  Types for uho sapi
+types:
+  register-employee-request-type:
+    type: object
+    description: This type used to register and update employee information
+    properties:
+      employeeID: 
+        type: integer
+        required: true
+        example: 1
+      employeeFirstName: 
+        type: string
+        required: true
+        minLength: 1
+        maxLength: 20
+        example: "John"
+      employeeLastName: 
+        type: string
+        required: true
+        minLength: 1
+        maxLength: 20
+        example: "Nixon"
+      address: 
+        type: string
+        required: true
+        minLength: 1
+        maxLength: 50
+      employeeEmail: 
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 50
+        example: "john@gmail.com"
+
+
+  register-employee-response-type:
+    type: object
+    description: This type used to get status of employee registration
+    properties:
+      employeeID: 
+        type: integer      
+        example: 1
+      status:
+        type: string
+        example: "ok"
+      
+
+
+  update-employee-request-type:
+    type: object
+    properties:
+      employeeID: 
+        type: integer
+        required: true
+        example: 1
+      employeeFirstName: 
+        type: string
+        required: true
+        minLength: 1
+        maxLength: 20
+        example: "John"
+      employeeLastName: 
+        type: string
+        required: true
+        minLength: 1
+        maxLength: 20
+        example: "Nixon"
+      address: 
+        type: string
+        required: true
+        minLength: 1
+        maxLength: 50
+      employeeEmail: 
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 50
+        example: "john@gmail.com"
+
+
+  update-employee-response-type:
+  response:
+      type: object
+      properties:
+        employeeID: 
+          type: integer
+          required: true
+          example: 1
+        status:
+          type: string
+          required: true
+          example: "ok"
+
+
+  get-employee-by-employeeID-response-type:
+        description: This type used to get one's employee information
+        properties:
+          employeeID: 
+            type: integer
+            required: true
+            example: 1
+          employeeFirstName: 
+            type: string
+            required: true
+            minLength: 1
+            maxLength: 20
+            example: "John"
+          employeeLastName: 
+            type: string
+            required: true
+            minLength: 1
+            maxLength: 20
+            example: "Nixon"
+          address: 
+            type: string
+            required: true
+            minLength: 1
+            maxLength: 50
+            example: "123 Groove Street"
+          employeeEmail: 
+            type: string
+            required: false
+            minLength: 1
+            maxLength: 50
+            example: "john@gmail.com"
+
+  
+

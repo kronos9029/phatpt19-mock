@@ -1,0 +1,94 @@
+#%RAML 1.0
+title: phatpt19-mock-lab
+baseUri: http://localhost:8081/emp/v1
+uses:
+  common-data-types: library/common-data-types.raml
+  employee-data-types: library/employee-data-types-library.raml
+
+
+/employee:
+  post:
+    description: This API is used to create employee.
+    body:
+      application/json:
+        type: employee-data-types.register-employee-request-type
+        example: !include request/register-employee-request-payload.json
+    responses:
+        200:
+           body:
+              application/json:
+                  type: employee-data-types.register-employee-response-type
+                  example: !include response/register-employee-response-payload.json          
+        400:
+          body:
+            application/json:
+              type: common-data-types.error-response-type
+              example: !include response/400.json               
+        500:
+          body:
+            application/json:
+              type: common-data-types.error-response-type
+              example: !include response/500.json             
+  put:
+    description: This API used to update an employee information.
+    body:
+      application/json:
+        type: employee-data-types.update-employee-request-type
+        example: !include request/update-employee-request-payload.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: 
+              type: employee-data-types.update-employee-response-type
+              example: !include response/update-employee-response-payload.json           
+      400:
+        body:
+          application/json: 
+                type: common-data-types.error-response-type
+                example: !include response/400.json             
+      500:
+        body:
+          application/json:
+                type: common-data-types.error-response-type
+                example: !include response/500.json    
+  /{employeeID}:
+    get:
+      description: To get employee information by id
+      responses:
+        200:
+          body:
+            application/json:
+              type: employee-data-types.get-employee-by-employeeID-response-type
+              example: !include response/get-employee-by-employeeID-response.json      
+        500:
+          body:
+            application/json:
+              type: common-data-types.error-response-type
+              example: !include response/500.json
+/status-check/{employeeID}:
+  description: To check status of an employee
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "message": "employee is alive and kicking"
+              }
+     
+
+      
+
+        
+
+  
+  
+
+
+            
+                
+              
+
+        
